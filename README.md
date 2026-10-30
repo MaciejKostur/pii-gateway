@@ -12,10 +12,3 @@ pytest -m "not slow"   # testy bez modelu
 pytest                 # wszystkie testy
 uvicorn pii_gateway.api:app --reload
 ```
-
-## TODO
-- [ ] zbior testowy (Faker pl_PL) + metryki precision/recall per typ
-- [ ] streaming (tokeny rozdzielone miedzy chunkami)
-- [ ] Redis jako vault
-- [ ] model zagrozen (obfuskacja, base64) i sekcja ograniczen
-- [ ] GitHub Actions
