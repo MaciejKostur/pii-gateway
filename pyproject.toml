@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pii-gateway"
+version = "0.1.0"
+description = "Bramka filtrujaca dane osobowe (PL) przed wyslaniem do LLM"
+requires-python = ">=3.10"
+dependencies = [
+    "presidio-analyzer",
+    "spacy",
+    "fastapi",
+    "uvicorn",
+    "httpx",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "faker"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = ["slow: testy ladujace model spaCy"]
